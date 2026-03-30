@@ -426,6 +426,7 @@ p { max-width: 72ch; }
   display: flex;
   align-items: center;
   background-color: var(--color-green-dark);
+  /* SVG hero scene; replace with hero-bg.jpg (1920×1080px) for photo-based hero */
   background-image: url('../assets/images/hero-bg.svg');
   background-size: cover;
   background-position: center;
