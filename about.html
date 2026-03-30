@@ -12,6 +12,7 @@
   <meta property="og:url" content="https://mclean-equine.com/about.html">
   <meta property="og:image" content="https://mclean-equine.com/assets/images/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
     <nav class="nav-container" aria-label="Main navigation">
       <div class="logo">
         <a href="index.html">
-          <img src="assets/images/logo.png" alt="McLean Equine logo" class="logo-img">
+          <img src="assets/images/logo.svg" alt="McLean Equine" class="logo-img">
           <span class="logo-text">McLean Equine</span>
         </a>
       </div>
@@ -49,8 +50,8 @@
     <section class="page-hero">
       <div class="container">
         <p class="breadcrumb"><a href="index.html">Home</a> / About</p>
-        <h1>About McLean Equine</h1>
-        <p class="hero-subtitle">Meet the equestrian professional behind the business.</p>
+        <h1>About Sarah McLean</h1>
+        <p class="hero-subtitle">The equestrian professional behind McLean Equine.</p>
       </div>
     </section>
 
@@ -59,12 +60,32 @@
       <div class="container">
         <div class="about-intro">
           <div class="about-image reveal">
-            <div class="about-image-placeholder" aria-hidden="true">
-              <!-- Replace with: assets/images/sarah-portrait.jpg -->
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="64" height="64" aria-hidden="true">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            <div class="about-image-visual">
+              <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Horse and rider silhouette -->
+                <g fill="#C9A96E" opacity="0.7">
+                  <!-- Horse body -->
+                  <ellipse cx="100" cy="160" rx="55" ry="32" />
+                  <!-- Horse neck -->
+                  <path d="M75,135 C72,120 75,108 82,100 C88,93 96,90 103,90 C108,90 112,92 115,96 L110,135 Z" />
+                  <!-- Horse head -->
+                  <path d="M103,90 C103,90 112,82 118,76 C122,70 122,63 118,57 C114,51 107,48 100,49 C94,50 88,54 86,60 C84,66 85,73 88,78 C85,78 82,80 80,84 C78,88 78,92 80,95 L103,90 Z" />
+                  <!-- Eye -->
+                  <circle cx="109" cy="65" r="3" fill="#2C4A3E" opacity="0.9"/>
+                  <!-- Legs -->
+                  <rect x="62" y="187" width="10" height="40" rx="3"/>
+                  <rect x="79" y="185" width="10" height="42" rx="3"/>
+                  <rect x="108" y="185" width="10" height="42" rx="3"/>
+                  <rect x="125" y="187" width="10" height="40" rx="3"/>
+                  <!-- Tail -->
+                  <path d="M150,155 C160,150 165,140 163,130 C162,125 158,122 155,124 C153,130 152,140 150,155 Z" />
+                  <!-- Mane -->
+                  <path d="M88,78 C83,72 80,65 82,59" fill="none" stroke="#C9A96E" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+                </g>
               </svg>
-              <span>Add portrait photo<br>assets/images/sarah-portrait.jpg</span>
+              <div class="about-image-quote">
+                "Horses and riders are best served by a professional who truly understands the science behind what they do."
+              </div>
             </div>
           </div>
           <div class="reveal">
@@ -115,7 +136,6 @@
           <span class="section-eyebrow">Credentials</span>
           <h2 class="section-title">Qualifications &amp; Experience</h2>
           <div class="section-rule left"></div>
-          <p class="section-subtitle">All qualifications and experience listed are publicly confirmed or professionally documented.</p>
         </div>
         <div class="qual-grid">
           <div class="qual-card reveal">
@@ -129,14 +149,14 @@
             <div class="qual-icon" aria-hidden="true">🔬</div>
             <div>
               <h4>PhD in Equine Science (In Progress)</h4>
-              <p>Postgraduate research extending Sarah's academic expertise in equine science — keeping her practice at the cutting edge of the field.</p>
+              <p>Postgraduate research extending academic expertise in equine science — keeping practice at the cutting edge of the field.</p>
             </div>
           </div>
           <div class="qual-card reveal">
             <div class="qual-icon" aria-hidden="true">🏅</div>
             <div>
               <h4>BHS Stage 2 Coach</h4>
-              <p>British Horse Society coaching qualification, demonstrating teaching ability to the industry's recognised standard. Aiming for BHS Stage 3.</p>
+              <p>British Horse Society coaching qualification, demonstrating teaching ability to the industry's recognised standard. Working towards BHS Stage 3.</p>
             </div>
           </div>
           <div class="qual-card reveal">
@@ -150,7 +170,7 @@
             <div class="qual-icon" aria-hidden="true">🏇</div>
             <div>
               <h4>Diploma in Racehorse Care &amp; Management</h4>
-              <p>Specialist qualification in racehorse handling, preparation and management — directly informing Sarah's ex-racehorse retraining work.</p>
+              <p>Specialist qualification in racehorse handling, preparation and management — directly informing ex-racehorse retraining work.</p>
             </div>
           </div>
           <div class="qual-card reveal">
@@ -193,7 +213,7 @@
           <div class="trust-card reveal">
             <div class="trust-icon" aria-hidden="true">🤝</div>
             <h3>Tailored to You</h3>
-            <p>No two horses or riders are the same. Every client receives an approach that's genuinely tailored — not a template — built around their horse, their goals, and their circumstances.</p>
+            <p>No two horses or riders are the same. Every client receives an approach that's genuinely tailored — built around their horse, their goals, and their circumstances.</p>
           </div>
         </div>
       </div>
@@ -239,7 +259,8 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="mailto:hello@mclean-equine.com">hello@mclean-equine.com</a></li>
+            <li><a href="mailto:mcleanequine@gmail.com">mcleanequine@gmail.com</a></li>
+            <li><a href="tel:+447498317305">07498 317305</a></li>
             <li><a href="https://www.instagram.com/mcleanequine/" rel="noopener noreferrer" target="_blank">@mcleanequine</a></li>
           </ul>
           <p style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.45)">Based in Wantage, Oxfordshire.<br>Also covering Berkshire.</p>
