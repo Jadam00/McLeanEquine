@@ -291,8 +291,9 @@ p { max-width: 72ch; }
 
 .logo-img {
   height: 44px;
-  width: auto;
-  object-fit: contain;
+  width: 44px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .logo-text {
@@ -426,11 +427,20 @@ p { max-width: 72ch; }
   display: flex;
   align-items: center;
   background-color: var(--color-green-dark);
-  /* SVG hero scene; replace with hero-bg.jpg (1920×1080px) for photo-based hero */
-  background-image: url('../assets/images/hero-bg.svg');
+  background-image: url('../assets/images/SarahWithHorseAndKid.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Dark overlay to ensure hero text remains legible over the photo background */
+  background: rgba(15, 35, 25, 0.58);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero::after {
@@ -442,11 +452,12 @@ p { max-width: 72ch; }
   height: 80px;
   background: linear-gradient(to bottom, transparent, var(--color-cream));
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 760px;
 }
 
@@ -822,6 +833,21 @@ p { max-width: 72ch; }
 }
 
 .case-study-full:last-child { border-bottom: none; }
+
+/* Featured image strip on case studies page */
+.case-studies-feature-image {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.case-studies-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
 
 .case-header {
   display: flex;
