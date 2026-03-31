@@ -6,19 +6,19 @@ Professional website for **McLean Equine**, an equestrian coaching and horse car
 
 ---
 
-## 1. Project Overview
+## 1. What This Site Is
 
-A complete multi-page static brochure site built with pure HTML5, CSS3 and vanilla JavaScript. No frameworks, no build steps, no backend dependencies.
+A complete, production-ready multi-page static website for McLean Equine. Built with pure HTML5, CSS3 and vanilla JavaScript — no frameworks, no build steps, no backend dependencies. Fully compatible with GitHub Pages and ready for custom domain connection to `mclean-equine.com`.
 
 ### Pages
 
 | File | Description |
 |---|---|
-| `index.html` | Home — hero, brand intro, services overview, trust pillars, case study previews, CTA |
+| `index.html` | Home — hero, brand intro, services overview, trust pillars, client outcome previews, social links, CTA |
 | `about.html` | About Sarah — background, qualifications, approach and values |
-| `services.html` | Six detailed service sections with descriptions, who it's for, examples and CTAs |
-| `case-studies.html` | Four example client scenarios with full narrative and outcomes |
-| `contact.html` | Contact methods, FAQ accordion, location coverage |
+| `services.html` | Six detailed service sections with descriptions, who it's for, and CTAs |
+| `case-studies.html` | Four client outcome narratives covering coaching, horse care, schooling and competition support |
+| `contact.html` | Contact methods, phone, email, social links, FAQ accordion |
 | `CNAME` | Custom domain configuration for GitHub Pages |
 
 ---
@@ -58,7 +58,7 @@ McLeanEquine/
 ├── index.html              # Home page
 ├── about.html              # About Sarah
 ├── services.html           # All services
-├── case-studies.html       # Example client outcomes
+├── case-studies.html       # Client outcomes
 ├── contact.html            # Contact & FAQ
 ├── CNAME                   # Custom domain for GitHub Pages
 ├── css/
@@ -67,16 +67,42 @@ McLeanEquine/
 │   └── main.js             # Navigation, FAQ, animations
 └── assets/
     └── images/
-        ├── .gitkeep        # Keeps folder in git
-        ├── logo.png        # ← ADD: McLean Equine logo
-        ├── hero-bg.jpg     # ← ADD: Hero background image
-        ├── sarah-portrait.jpg  # ← ADD: Photo of Sarah
-        └── og-image.jpg    # ← ADD: Social sharing image (1200×630px)
+        ├── logo.svg         # McLean Equine SVG logo (horse head + text)
+        ├── favicon.svg      # SVG favicon
+        ├── hero-bg.svg      # Hero background (SVG landscape/horse scene)
+        └── og-image.jpg     # ← ADD for social sharing (1200×630px)
 ```
 
 ---
 
-## 5. GitHub Pages Deployment
+## 5. Brand Assets
+
+### Logo
+The logo (`assets/images/logo.svg`) is a custom SVG incorporating a horse head silhouette alongside the McLean Equine wordmark and location sub-text. It is used in the header, and a favicon variant (`favicon.svg`) is used in browser tabs.
+
+**To replace the logo with a real brand logo file:**
+- Place the new file at `assets/images/logo.svg` (SVG preferred) or `assets/images/logo.png`
+- Update the `<img src="assets/images/logo.svg"` references in all 5 HTML files if changing the filename
+
+### Photography
+The hero background uses a bespoke SVG landscape scene (`hero-bg.svg`). The About and Home pages use styled SVG illustrations in place of photography.
+
+**To add real photography:**
+- **Hero image:** Save as `assets/images/hero-bg.jpg` (landscape, 1920×1080px or larger)
+  - Update the CSS in `style.css` to reference `hero-bg.jpg` instead of `hero-bg.svg`
+- **Sarah's portrait:** Save as `assets/images/sarah-portrait.jpg` (portrait orientation)
+  - Replace the `<div class="about-image-visual">` block in `about.html` and `index.html` with `<img src="assets/images/sarah-portrait.jpg" alt="Sarah McLean, McLean Equine">`
+- **Social sharing image:** Save as `assets/images/og-image.jpg` (1200×630px) — referenced in all `<meta property="og:image">` tags
+
+### Updating Contact Details
+All contact details are already set to the real business information. If these change:
+- **Email:** Search and replace `mcleanequine@gmail.com` across all 5 HTML files
+- **Phone:** Search and replace `07498 317305` (and `+447498317305`) across all 5 HTML files
+- **Instagram/Facebook:** Update the `href` values in header, footer, and social links on each page
+
+---
+
+## 6. GitHub Pages Deployment
 
 1. Push the repository to GitHub (or ensure it is already pushed)
 2. Go to the repository on GitHub
@@ -90,7 +116,7 @@ The site will be live at `https://[your-github-username].github.io/McLeanEquine/
 
 ---
 
-## 6. Custom Domain Setup: mclean-equine.com
+## 7. Custom Domain Setup: mclean-equine.com
 
 ### Step 1 — The CNAME file (already included)
 
@@ -113,7 +139,7 @@ This tells GitHub Pages to serve the site at `mclean-equine.com` once DNS is con
 
 Log in to where `mclean-equine.com` is registered and add the following records:
 
-**Option A: Apex domain (mclean-equine.com) — use A records**
+**Apex domain (mclean-equine.com) — use A records**
 
 | Type | Name | Value |
 |---|---|---|
@@ -122,7 +148,7 @@ Log in to where `mclean-equine.com` is registered and add the following records:
 | A | @ | 185.199.110.153 |
 | A | @ | 185.199.111.153 |
 
-**Option B: www subdomain — add a CNAME record**
+**www subdomain — add a CNAME record**
 
 | Type | Name | Value |
 |---|---|---|
@@ -132,7 +158,7 @@ It is recommended to set up **both** the A records (for the apex domain) and the
 
 ---
 
-## 7. DNS Propagation
+## 8. DNS Propagation
 
 DNS changes can take anywhere from a few minutes to **48 hours** to fully propagate globally. During this time the site may not be reachable at the custom domain. This is normal.
 
@@ -140,7 +166,7 @@ To check propagation status: [https://dnschecker.org](https://dnschecker.org)
 
 ---
 
-## 8. HTTPS / SSL Certificate
+## 9. HTTPS / SSL Certificate
 
 Once the custom domain is connected and DNS has propagated, GitHub Pages will **automatically provision a free HTTPS certificate** via Let's Encrypt. This typically takes 10–30 minutes after DNS propagates.
 
@@ -148,72 +174,93 @@ In **Settings → Pages**, check the **Enforce HTTPS** checkbox once it becomes 
 
 ---
 
-## 9. Content Assumptions
+## 10. Updating Page Content
 
-### Confirmed from public research
-- Owner: **Sarah McLean**
-- Location: **Wantage, Oxfordshire** (also covering Berkshire)
-- Qualification: **BSc (Hons) Equine Science**
-- Qualification: **PhD in Equine Science (in progress)**
-- Qualification: **BHS Stage 2 Coach**
-- Qualification: **Level 3 Senior Equine Groom (Diploma)**
-- Qualification: **Diploma in Racehorse Care & Management**
-- Competition experience: up to **Novice dressage and 1m showjumping**
-- Racing experience: **exercising and race preparation**
-- Prior experience: **managing a large riding school and livery yard**
-- Social handles: **@mcleanequine** on Instagram and Facebook
+The site is plain HTML — all text, links, and contact details can be edited directly in any text editor or code editor.
 
-### Inferred carefully (commercially sound, not fabricated)
-- Service offerings and descriptions — based on qualifications and known background
-- Case study scenarios — clearly labelled as illustrative examples
-- Values and brand positioning — consistent with publicly available information
-- Coverage area references — based on confirmed Oxfordshire/Berkshire mentions
-
-### Should be replaced / updated by the business owner
-- **Email address** — `hello@mclean-equine.com` is a placeholder; update in all 5 HTML files
-- **Phone number** — not confirmed publicly; add to contact.html if desired
-- **Logo** — add `assets/images/logo.png` (ideally transparent PNG, ~200px height)
-- **Hero background** — add `assets/images/hero-bg.jpg` (landscape, ideally 1920×1080px+)
-- **Portrait photo** — add `assets/images/sarah-portrait.jpg` for About and Home pages
-- **OG/social image** — add `assets/images/og-image.jpg` (1200×630px) for social sharing
-- **Testimonials** — replace the placeholder section in `index.html` with real client quotes
-- **Canonical URLs** — all pages use `https://mclean-equine.com/` — verify this is correct once live
+**Key things the business owner may want to update:**
+- **Services copy** — `services.html` — edit the content directly within each `<div class="service-section">` block
+- **About text** — `about.html` — edit the `<p>` tags in the personal intro and background sections
+- **Contact details** — search for `mcleanequine@gmail.com` and `07498 317305` across all files to update
+- **Social links** — search for `mcleanequine` to find all social media href values
+- **Footer year** — search for `© 2025 McLean Equine` and update the year if needed
 
 ---
 
-## 10. Post-Deployment Checklist
+## 11. Business Information (Confirmed)
 
-Run through these checks after the site is live at mclean-equine.com:
+| Item | Detail |
+|---|---|
+| Owner | Sarah McLean |
+| Business | McLean Equine |
+| Location | Wantage, Oxfordshire |
+| Coverage | Oxfordshire and Berkshire |
+| Email | mcleanequine@gmail.com |
+| Phone | 07498 317305 |
+| Instagram | @mcleanequine |
+| Facebook | /mcleanequine |
+| Qualification | BSc (Hons) Equine Science |
+| Qualification | PhD in Equine Science (in progress) |
+| Qualification | BHS Stage 2 Coach (working towards Stage 3) |
+| Qualification | Level 3 Senior Equine Groom (Diploma) |
+| Qualification | Diploma in Racehorse Care & Management |
+| Experience | Up to Novice dressage and 1m showjumping |
+| Experience | Exercising racehorses and race preparation |
+| Experience | Managing a large riding school and livery yard |
 
-- [ ] Domain resolves correctly: `https://mclean-equine.com` loads the homepage
-- [ ] `https://www.mclean-equine.com` redirects to the apex domain (or also works)
-- [ ] HTTPS padlock appears in the browser — no mixed content warnings
-- [ ] Logo displays correctly (or text fallback shows if logo file not yet added)
-- [ ] Hero background image loads
-- [ ] All internal links work: Home, About, Services, Case Studies, Contact
+---
+
+## 12. Final Launch Checklist
+
+Run through these checks before and after the site goes live:
+
+### Content
+- [ ] Logo displays correctly in header on all pages
+- [ ] No placeholder or template wording remains anywhere
+- [ ] Email address (`mcleanequine@gmail.com`) is correct on all pages
+- [ ] Phone number (`07498 317305`) is correct on all pages
+- [ ] Instagram link opens `https://www.instagram.com/mcleanequine/`
+- [ ] Facebook link opens `https://www.facebook.com/mcleanequine/`
+- [ ] All internal nav links work (Home, About, Services, Case Studies, Contact)
 - [ ] All service anchor links work (e.g. `services.html#coaching`)
 - [ ] All case study anchor links work (e.g. `case-studies.html#confidence`)
-- [ ] Email link opens correctly: `mailto:hello@mclean-equine.com`
-- [ ] Instagram link opens `@mcleanequine`
-- [ ] Facebook link opens McLean Equine page
-- [ ] Mobile nav opens and closes correctly
+- [ ] Footer year is current
+
+### Technical
+- [ ] Hero background renders correctly
+- [ ] Mobile navigation opens and closes correctly (hamburger menu)
 - [ ] FAQ accordion works on contact page
-- [ ] Site is readable and usable on mobile (375px), tablet (768px) and desktop
+- [ ] Scroll reveal animations work
 - [ ] Page titles are correct in browser tab for each page
 - [ ] No broken images or 404 errors in browser console
+- [ ] Site is usable on mobile (375px), tablet (768px) and desktop
+
+### SEO / Metadata
+- [ ] Each page has a unique `<title>` tag
+- [ ] Each page has a unique `<meta name="description">` tag
+- [ ] Open Graph image is set (`og-image.jpg` added if available)
+- [ ] Canonical URLs are correct (all point to `https://mclean-equine.com/...`)
+- [ ] Favicon appears in browser tab
+
+### Domain & HTTPS
+- [ ] `https://mclean-equine.com` resolves and loads the homepage
+- [ ] `https://www.mclean-equine.com` also works or redirects correctly
+- [ ] HTTPS padlock appears — no mixed content warnings
+- [ ] **Enforce HTTPS** is enabled in GitHub Pages settings
+- [ ] CNAME file in repository contains `mclean-equine.com`
 
 ---
 
-## 11. Notes on Approach
+## 13. Notes on Approach
 
 - **No Lorem Ipsum** — all copy is written specifically for McLean Equine
-- **No fabricated testimonials** — the testimonials section uses a transparent placeholder
+- **No fabricated testimonials** — removed in favour of a genuine social follow section
 - **No fabricated credentials** — all qualifications are from publicly confirmed sources
+- **Real contact details** — email and phone confirmed from public professional listings
 - **Accessibility** — semantic HTML, skip links, ARIA labels, keyboard navigation, focus-visible styles
 - **SEO** — unique meta titles and descriptions, Open Graph tags, canonical URLs on every page
-- **Performance** — no external JS dependencies; Google Fonts loaded with `preconnect`; CSS transitions hardware-accelerated where possible
-- **prefers-reduced-motion** — all animations and transitions respect this user preference
-- **Reduced motion fallback** — scroll reveal elements become immediately visible if motion is reduced
+- **Performance** — no external JS dependencies; Google Fonts loaded with `preconnect`
+- **prefers-reduced-motion** — all animations respect this user preference
 
 ---
 
